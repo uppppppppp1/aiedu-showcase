@@ -15,7 +15,7 @@
     <p class="card-desc" v-if="item.description">{{ item.description }}</p>
     <a
       class="card-link"
-      :href="item.url"
+      :href="viewUrl"
       target="_blank"
       rel="noopener noreferrer"
     >查看文件</a>
@@ -31,4 +31,12 @@ const props = defineProps({
 
 const iconMap = { pdf: '📄', word: '📝', image: '🖼️', link: '🔗' }
 const icon = computed(() => iconMap[props.item.type] ?? '📎')
+
+const viewUrl = computed(() => {
+  const { type, url } = props.item
+  if (type === 'pdf' || type === 'word') {
+    return 'https://docs.google.com/viewer?url=' + encodeURIComponent(url)
+  }
+  return url
+})
 </script>
