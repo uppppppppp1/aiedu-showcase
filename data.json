@@ -1,0 +1,160 @@
+{
+  "categories": [
+    {
+      "id": "student",
+      "title": "学生培养",
+      "children": [
+        {
+          "id": "student-thesis",
+          "title": "学生优秀论文",
+          "items": [
+            {
+              "id": "thesis-001",
+              "title": "基于深度学习的图像识别研究",
+              "description": "2023年校级优秀毕业论文，荣获一等奖",
+              "author": "张三",
+              "year": 2023,
+              "type": "pdf",
+              "url": "https://github.com/OWNER/REPO/releases/download/v1.0/thesis-001.pdf",
+              "cover": ""
+            },
+            {
+              "id": "thesis-002",
+              "title": "人工智能在教育领域的应用综述",
+              "description": "2022年省级优秀论文",
+              "author": "李四",
+              "year": 2022,
+              "type": "pdf",
+              "url": "https://github.com/OWNER/REPO/releases/download/v1.0/thesis-002.pdf",
+              "cover": ""
+            }
+          ]
+        },
+        {
+          "id": "student-award",
+          "title": "学生竞赛获奖",
+          "items": [
+            {
+              "id": "award-001",
+              "title": "全国大学生创新创业大赛 一等奖",
+              "description": "参赛项目：智慧课堂辅助系统",
+              "author": "王五、赵六",
+              "year": 2023,
+              "type": "image",
+              "url": "https://github.com/OWNER/REPO/releases/download/v1.0/award-001.jpg",
+              "cover": "https://github.com/OWNER/REPO/releases/download/v1.0/award-001.jpg"
+            }
+          ]
+        },
+        {
+          "id": "student-startup",
+          "title": "学生创业成果",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "teacher",
+      "title": "教师成果",
+      "children": [
+        {
+          "id": "teacher-award",
+          "title": "教师获奖",
+          "items": [
+            {
+              "id": "taward-001",
+              "title": "省级教学成果奖 一等奖",
+              "description": "2022年广东省教学成果奖一等奖",
+              "author": "陈老师",
+              "year": 2022,
+              "type": "pdf",
+              "url": "https://github.com/OWNER/REPO/releases/download/v1.0/taward-001.pdf",
+              "cover": ""
+            }
+          ]
+        },
+        {
+          "id": "teacher-project",
+          "title": "人才培养项目立项",
+          "items": [
+            {
+              "id": "project-001",
+              "title": "新工科背景下人工智能课程体系建设",
+              "description": "教育部新工科研究与实践项目，2021年立项",
+              "author": "刘老师",
+              "year": 2021,
+              "type": "word",
+              "url": "https://github.com/OWNER/REPO/releases/download/v1.0/project-001.docx",
+              "cover": ""
+            }
+          ]
+        },
+        {
+          "id": "teacher-book",
+          "title": "教材、专著出版",
+          "items": [
+            {
+              "id": "book-001",
+              "title": "人工智能基础教程（第2版）",
+              "description": "教育部规划教材，清华大学出版社，2023年出版",
+              "author": "张老师 等",
+              "year": 2023,
+              "type": "image",
+              "url": "https://github.com/OWNER/REPO/releases/download/v1.0/book-001.jpg",
+              "cover": "https://github.com/OWNER/REPO/releases/download/v1.0/book-001.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domestic",
+      "title": "国内影响力",
+      "children": [
+        {
+          "id": "domestic-university",
+          "title": "高等学校应用推广证明材料",
+          "items": [
+            {
+              "id": "duniv-001",
+              "title": "北京大学课程应用证明",
+              "description": "北京大学人工智能学院采用本课程体系证明",
+              "author": "北京大学",
+              "year": 2023,
+              "type": "pdf",
+              "url": "https://github.com/OWNER/REPO/releases/download/v1.0/duniv-001.pdf",
+              "cover": ""
+            }
+          ]
+        },
+        {
+          "id": "domestic-school",
+          "title": "中小学应用推广证明材料",
+          "items": []
+        },
+        {
+          "id": "domestic-product",
+          "title": "小花狮系列产品应用",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "title": "国际影响力",
+      "children": [],
+      "items": [
+        {
+          "id": "intl-001",
+          "title": "IEEE教育技术国际会议最佳论文",
+          "description": "IEEE EDUCON 2023 Best Paper Award",
+          "author": "张老师",
+          "year": 2023,
+          "type": "pdf",
+          "url": "https://github.com/OWNER/REPO/releases/download/v1.0/intl-001.pdf",
+          "cover": ""
+        }
+      ]
+    }
+  ]
+}
