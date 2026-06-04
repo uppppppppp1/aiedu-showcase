@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "gen": "node scripts/gen-data.js"
   },
   "dependencies": {
     "vue": "^3.4.0"

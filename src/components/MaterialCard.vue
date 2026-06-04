@@ -8,7 +8,7 @@
     <img
       v-if="item.type === 'image' && item.cover"
       class="card-thumbnail"
-      :src="item.cover"
+      :src="coverSrc"
       :alt="item.title"
       @click="lightboxOpen = true"
     />
@@ -31,7 +31,7 @@
 
   <Teleport to="body">
     <div v-if="lightboxOpen" class="lightbox" @click="lightboxOpen = false">
-      <img :src="item.url" :alt="item.title" class="lightbox-img" @click.stop />
+      <img :src="fullUrl(item.url)" :alt="item.title" class="lightbox-img" @click.stop />
       <button class="lightbox-close" @click="lightboxOpen = false">✕</button>
     </div>
   </Teleport>
@@ -46,14 +46,26 @@ const props = defineProps({
 
 const lightboxOpen = ref(false)
 
+const BASE = import.meta.env.BASE_URL
+
+// 相对路径（materials/...）自动拼接 base，绝对 URL 直接使用
+function fullUrl(url) {
+  if (!url) return ''
+  if (url.startsWith('http')) return url
+  return BASE + url
+}
+
 const typeMap = { pdf: 'PDF', word: 'Word', image: '图片', link: '链接' }
 const typeBadge = computed(() => typeMap[props.item.type] ?? 'FILE')
 
+const coverSrc = computed(() => fullUrl(props.item.cover))
+
 const viewUrl = computed(() => {
   const { type, url } = props.item
+  const resolved = fullUrl(url)
   if (type === 'pdf' || type === 'word') {
-    return 'https://docs.google.com/viewer?url=' + encodeURIComponent(url)
+    return 'https://docs.google.com/viewer?url=' + encodeURIComponent(resolved)
   }
-  return url
+  return resolved
 })
 </script>
