@@ -3,6 +3,7 @@
     {
       "id": "student",
       "title": "学生培养",
+      "description": "学生优秀论文、竞赛获奖及创业成果展示",
       "children": [
         {
           "id": "student-thesis",
@@ -46,6 +47,7 @@
     {
       "id": "teacher",
       "title": "教师成果",
+      "description": "教师获奖、人才培养项目立项及教材专著出版",
       "children": [
         {
           "id": "teacher-award",
@@ -100,6 +102,7 @@
     {
       "id": "domestic",
       "title": "国内影响力",
+      "description": "高校及中小学应用推广、小花狮系列产品应用",
       "children": [
         {
           "id": "domestic-university",
@@ -132,6 +135,7 @@
     {
       "id": "international",
       "title": "国际影响力",
+      "description": "国际合作与推广应用成果",
       "children": [],
       "items": [
         {
