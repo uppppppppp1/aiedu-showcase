@@ -120,8 +120,31 @@ function materialExists(materials) {
   return Array.isArray(materials) && materials.length > 0;
 }
 
+function initScrollReveal() {
+  const targets = document.querySelectorAll('.category-card, .material-card, .section h2, .subcategory-chip');
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.classList.add('reveal');
+        setTimeout(() => el.classList.add('visible'), i * 60);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(el => observer.observe(el));
+}
+
 if (document.readyState !== 'loading') {
   initPage();
+  initScrollReveal();
 } else {
-  document.addEventListener('DOMContentLoaded', initPage);
+  document.addEventListener('DOMContentLoaded', () => {
+    initPage();
+    initScrollReveal();
+  });
 }
