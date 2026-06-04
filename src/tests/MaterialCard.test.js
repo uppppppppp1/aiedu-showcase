@@ -21,14 +21,14 @@ describe('MaterialCard', () => {
     expect(wrapper.text()).toContain('2023')
   })
 
-  it('renders PDF icon for pdf type', () => {
+  it('renders PDF badge for pdf type', () => {
     const wrapper = mount(MaterialCard, { props: { item: base } })
-    expect(wrapper.find('.card-icon').text()).toBe('📄')
+    expect(wrapper.find('.card-type-badge').text()).toBe('PDF')
   })
 
-  it('renders Word icon for word type', () => {
+  it('renders Word badge for word type', () => {
     const wrapper = mount(MaterialCard, { props: { item: { ...base, type: 'word' } } })
-    expect(wrapper.find('.card-icon').text()).toBe('📝')
+    expect(wrapper.find('.card-type-badge').text()).toBe('Word')
   })
 
   it('renders image thumbnail for image type', () => {
@@ -52,6 +52,6 @@ describe('MaterialCard', () => {
     const wrapper = mount(MaterialCard, {
       props: { item: { ...base, type: 'image', url: 'https://example.com/img.jpg', cover: 'https://example.com/img.jpg' } },
     })
-    expect(wrapper.find('.card-link').text()).toBe('查看图片')
+    expect(wrapper.find('.card-link').text()).toContain('查看图片')
   })
 })

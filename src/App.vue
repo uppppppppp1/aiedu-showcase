@@ -2,7 +2,13 @@
   <div class="app">
     <header class="app-header">
       <div class="header-inner">
-        <span class="header-title">教学成果奖材料展示平台</span>
+        <div class="header-brand">
+          <span class="header-mark">◈</span>
+          <div class="header-text">
+            <span class="header-title">教学成果奖材料展示平台</span>
+            <span class="header-sub">Higher Education Teaching Achievement Award</span>
+          </div>
+        </div>
       </div>
     </header>
     <div class="app-body">
@@ -22,7 +28,8 @@
           :breadcrumb="breadcrumb"
         />
         <div v-else class="welcome">
-          <p>请从左侧导航选择分类查看材料</p>
+          <span class="welcome-mark">◈</span>
+          <p class="welcome-text">请从左侧导航选择分类查看材料</p>
         </div>
       </main>
     </div>
@@ -70,7 +77,7 @@ const breadcrumb = computed(() => {
     if (cat.id === activeId.value) return cat.title
     if (cat.children) {
       const child = cat.children.find(c => c.id === activeId.value)
-      if (child) return `${cat.title} / ${child.title}`
+      if (child) return `${cat.title} › ${child.title}`
     }
   }
   return ''

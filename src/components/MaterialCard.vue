@@ -1,7 +1,8 @@
 <template>
   <div class="card">
+    <div class="card-top-bar"></div>
     <div class="card-header">
-      <span class="card-icon">{{ icon }}</span>
+      <span class="card-type-badge">{{ typeBadge }}</span>
       <span class="card-year" v-if="item.year">{{ item.year }}</span>
     </div>
     <img
@@ -18,17 +19,16 @@
       v-if="item.type === 'image'"
       class="card-link"
       @click="lightboxOpen = true"
-    >查看图片</button>
+    >查看图片 <span class="card-link-arrow">→</span></button>
     <a
       v-else
       class="card-link"
       :href="viewUrl"
       target="_blank"
       rel="noopener noreferrer"
-    >查看文件</a>
+    >查看文件 <span class="card-link-arrow">→</span></a>
   </div>
 
-  <!-- Lightbox -->
   <Teleport to="body">
     <div v-if="lightboxOpen" class="lightbox" @click="lightboxOpen = false">
       <img :src="item.url" :alt="item.title" class="lightbox-img" @click.stop />
@@ -46,8 +46,8 @@ const props = defineProps({
 
 const lightboxOpen = ref(false)
 
-const iconMap = { pdf: '📄', word: '📝', image: '🖼️', link: '🔗' }
-const icon = computed(() => iconMap[props.item.type] ?? '📎')
+const typeMap = { pdf: 'PDF', word: 'Word', image: '图片', link: '链接' }
+const typeBadge = computed(() => typeMap[props.item.type] ?? 'FILE')
 
 const viewUrl = computed(() => {
   const { type, url } = props.item

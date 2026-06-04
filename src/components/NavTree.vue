@@ -1,18 +1,18 @@
 <template>
   <nav class="nav-tree">
     <ul>
-      <li v-for="cat in categories" :key="cat.id">
+      <li v-for="(cat, idx) in categories" :key="cat.id" class="nav-section">
         <div
           class="nav-item nav-item--parent"
           :class="{ 'nav-item--active': activeId === cat.id }"
           :data-id="cat.id"
           @click="onParentClick(cat)"
         >
+          <span class="nav-index">{{ String(idx + 1).padStart(2, '0') }}</span>
+          <span class="nav-label">{{ cat.title }}</span>
           <span class="nav-arrow" v-if="cat.children && cat.children.length">
-            {{ expanded[cat.id] ? '▾' : '▸' }}
+            {{ expanded[cat.id] ? '−' : '+' }}
           </span>
-          <span class="nav-arrow nav-arrow--leaf" v-else>•</span>
-          {{ cat.title }}
         </div>
         <ul v-if="cat.children && cat.children.length && expanded[cat.id]" class="nav-children">
           <li v-for="child in cat.children" :key="child.id">
@@ -22,6 +22,7 @@
               :data-id="child.id"
               @click="emit('select', child.id)"
             >
+              <span class="nav-dot">›</span>
               {{ child.title }}
             </div>
           </li>
