@@ -40,11 +40,10 @@ describe('MaterialCard', () => {
     expect(img.attributes('src')).toBe('https://example.com/cover.jpg')
   })
 
-  it('view button wraps pdf url in google docs viewer', () => {
+  it('view button links directly to the file url', () => {
     const wrapper = mount(MaterialCard, { props: { item: base } })
     const link = wrapper.find('.card-link')
-    expect(link.attributes('href')).toContain('docs.google.com/viewer')
-    expect(link.attributes('href')).toContain(encodeURIComponent('https://example.com/thesis.pdf'))
+    expect(link.attributes('href')).toBe('https://example.com/thesis.pdf')
     expect(link.attributes('target')).toBe('_blank')
   })
 

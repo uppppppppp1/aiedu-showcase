@@ -60,12 +60,5 @@ const typeBadge = computed(() => typeMap[props.item.type] ?? 'FILE')
 
 const coverSrc = computed(() => fullUrl(props.item.cover))
 
-const viewUrl = computed(() => {
-  const { type, url } = props.item
-  const resolved = fullUrl(url)
-  if (type === 'pdf' || type === 'word') {
-    return 'https://docs.google.com/viewer?url=' + encodeURIComponent(resolved)
-  }
-  return resolved
-})
+const viewUrl = computed(() => fullUrl(props.item.url))
 </script>
