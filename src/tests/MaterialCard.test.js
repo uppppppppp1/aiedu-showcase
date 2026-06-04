@@ -52,6 +52,6 @@ describe('MaterialCard', () => {
     const wrapper = mount(MaterialCard, {
       props: { item: { ...base, type: 'image', url: 'https://example.com/img.jpg', cover: 'https://example.com/img.jpg' } },
     })
-    expect(wrapper.find('.card-link').attributes('href')).toBe('https://example.com/img.jpg')
+    expect(wrapper.find('.card-link').text()).toBe('查看图片')
   })
 })
