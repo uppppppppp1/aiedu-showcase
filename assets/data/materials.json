@@ -1,0 +1,38 @@
+[
+  {
+    "id": "student-paper-001",
+    "category": "学生培养",
+    "subcategory": "学生优秀论文",
+    "title": "智能教育平台学习效果分析",
+    "description": "展示学生发表的优秀论文与教学实践总结。",
+    "date": "2025-11-05",
+    "type": "论文",
+    "tags": ["AI", "教育", "论文"],
+    "cover": "https://via.placeholder.com/640x400?text=论文展示",
+    "attachments": [
+      {
+        "label": "论文 PDF",
+        "url": "https://example.com/materials/student-paper-001/paper.pdf",
+        "mime": "application/pdf"
+      }
+    ]
+  },
+  {
+    "id": "teacher-award-001",
+    "category": "教师成果",
+    "subcategory": "教师获奖",
+    "title": "优秀教师教学成果奖",
+    "description": "教师参与国家级教学成果奖，材料包含获奖证书与项目简介。",
+    "date": "2025-08-18",
+    "type": "获奖",
+    "tags": ["教学成果", "教师", "获奖"],
+    "cover": "https://via.placeholder.com/640x400?text=教师成果",
+    "attachments": [
+      {
+        "label": "获奖证书 PDF",
+        "url": "https://example.com/materials/teacher-award-001/certificate.pdf",
+        "mime": "application/pdf"
+      }
+    ]
+  }
+]
